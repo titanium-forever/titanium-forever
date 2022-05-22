@@ -11,6 +11,13 @@
 -- Set pathgrid to off to stop it wandering through walls
 UPDATE spawn2 SET pathgrid=0 WHERE id=72032;
 
+-----------
+-- Oggok --
+-----------
+
+-- Mooglan should spawn with PoP not LoY
+UPDATE spawn2 SET min_expansion=4 WHERE spawngroupID=7605;
+
 ---------------
 -- Steamfont --
 ---------------
