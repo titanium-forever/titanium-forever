@@ -42,7 +42,7 @@ UPDATE npc_types SET npc_faction_id=1060 WHERE id=55081;
 --------------------
 
 -- Oasis to North Ro should maintain longitude and not get characters stuck in the ground
-UPDATE zone_points SET target_x="999999",target_y="-1876",target_z="999999" WHERE id=692;
+UPDATE zone_points SET target_x="999999",target_y="-1876",target_z="999999",target_heading="999" WHERE id=692;
 
 -- North Ro to Oasis should maintain longitude
-UPDATE zone_points SET target_x="999999",target_y="2501.1",target_z="999999" WHERE id=687;
+UPDATE zone_points SET target_x="999999",target_y="2501.1",target_z="999999",target_heading="999" WHERE id=687;
