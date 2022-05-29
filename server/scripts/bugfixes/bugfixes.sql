@@ -58,5 +58,5 @@ UPDATE zone SET expansion="1" WHERE short_name="erudsxing";
 ------ NPCs --------
 --------------------
 
--- Translocators Setikan, Narrik, Sedina, Eniela and Jempar should all be able to respond to hidden and invis players
-UPDATE npc_types SET see_invis="1",see_invis_undead="1",see_hide="1" WHERE id IN (10155,409255,1135,24101,98045);
+-- Translocators Setikan, Narrik, Sedina, Eniela, Jempar, Gethia and Fithop should all be able to respond to hidden and invis players, and also not be able to be attacked
+UPDATE npc_types SET see_invis="1",see_invis_undead="1",see_hide="1",special_abilities="19,1^20,1^24,1^35,1" WHERE id IN (10155,69088,1135,24101,98045,68134,68135);
