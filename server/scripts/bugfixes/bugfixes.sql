@@ -46,3 +46,17 @@ UPDATE zone_points SET target_x="999999",target_y="-1876",target_z="999999",targ
 
 -- North Ro to Oasis should maintain longitude
 UPDATE zone_points SET target_x="999999",target_y="2501.1",target_z="999999",target_heading="999" WHERE id=687;
+
+--------------------
+---- Zone Data -----
+--------------------
+
+-- Erud's Crossing should be set to Classic, not Kunark
+UPDATE zone SET expansion="1" WHERE short_name="erudsxing";
+
+--------------------
+------ NPCs --------
+--------------------
+
+-- Translocators Setikan, Narrik, Sedina, Eniela, Jempar, Gethia and Fithop should all be able to respond to hidden and invis players, and also not be able to be attacked
+UPDATE npc_types SET see_invis="1",see_invis_undead="1",see_hide="1",special_abilities="19,1^20,1^24,1^35,1" WHERE id IN (10155,69088,1135,24101,98045,68134,68135);
