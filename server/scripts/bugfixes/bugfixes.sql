@@ -64,6 +64,20 @@ UPDATE zone_points SET target_x="999999",target_y="2501.1",target_z="999999",tar
 -- Oasis to North Ro
 UPDATE zone_points SET target_x="999999",target_y="-1876",target_z="999999",target_heading="999" WHERE id=692;
 
+-- SolA to Lavastorm
+UPDATE zone_points SET min_expansion="9" WHERE id=910;
+INSERT INTO `zone_points` (`zone`,`number`,`target_x`,`target_y`,`target_z`,`target_heading`,`target_zone_id`,`min_expansion`,`max_expansion`)
+	SELECT 'soldunga','1','226','783','131','999','27','0','8'
+	WHERE NOT EXISTS (SELECT * FROM `zone_points`
+    	WHERE `zone`='soldunga' AND `target_zone_id`='27' AND `min_expansion`='0' AND `max_expansion`='8');
+
+-- SolB to Lavastorm
+UPDATE zone_points SET min_expansion="9" WHERE id=1147;
+INSERT INTO `zone_points` (`zone`,`number`,`target_x`,`target_y`,`target_z`,`target_heading`,`target_zone_id`,`min_expansion`,`max_expansion`)
+	SELECT 'soldungb','1','485','915','56','999','27','0','8'
+	WHERE NOT EXISTS (SELECT * FROM `zone_points`
+    	WHERE `zone`='soldungb' AND `target_zone_id`='27' AND `min_expansion`='0' AND `max_expansion`='8');
+
 -- West Freeport to East Commonlands
 UPDATE zone_points SET target_x="-1592",target_y="999999",target_z="-50",target_heading="999" WHERE id=387;
 -- West Freeport to East Freeport
