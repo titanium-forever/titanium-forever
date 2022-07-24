@@ -11,6 +11,13 @@
 -- Set pathgrid to off to stop it wandering through walls
 UPDATE spawn2 SET pathgrid=0 WHERE id=72032;
 
+------------------
+-- Butcherblock --
+------------------
+
+-- Translocator Gethia should spawn when Kunark is enabled, not classic
+UPDATE spawn2 SET min_expansion=1 WHERE spawngroupID=275105;
+
 -----------
 -- Oggok --
 -----------
@@ -100,5 +107,5 @@ UPDATE zone SET expansion="1" WHERE short_name="erudsxing";
 ------ NPCs --------
 --------------------
 
--- Translocators Setikan, Narrik, Sedina, Eniela, Jempar, Gethia and Fithop should all be able to respond to hidden and invis players, and also not be able to be attacked
-UPDATE npc_types SET see_invis="1",see_invis_undead="1",see_hide="1",special_abilities="19,1^20,1^24,1^35,1" WHERE id IN (10155,69088,1135,24101,98045,68134,68135);
+-- Translocators should all be able to respond to hidden and invis players, and also not be able to be attacked
+UPDATE npc_types SET see_invis="1",see_invis_undead="1",see_hide="1",special_abilities="19,1^20,1^24,1^35,1" WHERE id IN (10155,69088,1135,24101,98045,68134,68135,37066,93157,96070,96071);
